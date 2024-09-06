@@ -1,0 +1,12 @@
+{
+  "extends": "next",
+  "plugins": ["simple-import-sort"],
+  "rules": {
+    "simple-import-sort/imports": "warn",
+    "simple-import-sort/exports": "warn",
+    "react-hooks/exhaustive-deps": "error",
+    "react/no-unescaped-entities": "off",
+    "react/jsx-key": [1, { "checkFragmentShorthand": true }],
+    "@next/next/no-page-custom-font": "off"
+  } 
+}
