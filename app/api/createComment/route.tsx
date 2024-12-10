@@ -15,6 +15,7 @@ export async function POST(request: Request) {
       email,
       commentPost,
       approved: false,
+      projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
     })
 
     return NextResponse.json({ message: 'Comment submitted successfully' }, { status: 200 })
