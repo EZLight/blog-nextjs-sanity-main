@@ -15,7 +15,11 @@ export default defineType({
       name: 'parent',
       type: 'reference',
       to: [{type: 'category'}],
-      // This ensures we cannot select other "children"
+      weak: true,
+      validation: Rule => Rule.custom((value, context) => {
+        if (!value) return true
+        return context?.document?._id !== value._ref ? true : 'Cannot reference itself as parent'
+      }),
       options: {
         filter: '!defined(parent)',
       },
