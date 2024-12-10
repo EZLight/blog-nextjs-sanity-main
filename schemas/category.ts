@@ -14,7 +14,7 @@ export default defineType({
     defineField({
       name: 'parent',
       type: 'reference',
-      to: {type: 'category'},
+      to: [{type: 'category'}],
       // This ensures we cannot select other "children"
       options: {
         filter: '!defined(parent)',
